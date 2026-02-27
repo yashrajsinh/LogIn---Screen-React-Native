@@ -58,7 +58,11 @@ function App() {
       </Text>
       <TouchableOpacity
         style={styles.btnLogin}
-        onPress={() => Alert.alert('Welcome 🙏 ' + userName)}
+        onPress={() =>
+          !userName.trim()
+            ? Alert.alert('Enter User Name to contiue')
+            : Alert.alert('Welcome 🙏 ' + userName)
+        }
       >
         <Text style={styles.txtLogin}>Login</Text>
       </TouchableOpacity>
@@ -71,10 +75,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FEF6EF',
   },
   //Background img
-  imgBack: {
-    flex: 1,
-    justifyContent: 'center',
-  },
+  // imgBack: {
+  //   flex: 1,
+  //   justifyContent: 'center',
+  // },
   loginContainer: {
     height: 320,
     backgroundColor: '#FCE2CE',
