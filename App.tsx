@@ -5,41 +5,52 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Text, StyleSheet, View, Image } from 'react-native';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+    <SafeAreaProvider style={styles.mainBackground}>
+      <View style={styles.loginContainer}>
+        <SafeAreaView>
+          <Text style={styles.loginText}>Login</Text>
+          <Image
+            style={styles.iconSize}
+            source={require('./assets/images/icon.png')}
+          />
+        </SafeAreaView>
+      </View>
+
+      <SafeAreaView></SafeAreaView>
     </SafeAreaProvider>
   );
 }
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  textStyle: {
+    fontSize: 25,
+    color: '#FFFFFF',
+  },
+  mainBackground: {
+    backgroundColor: '#FEF6EF',
+  },
+  iconSize: {
+    width: 250,
+    height: 250,
+    marginStart: 70,
+  },
+  loginContainer: {
+    height: 350,
+    backgroundColor: '#FCE2CE',
+    borderBottomRightRadius: 300,
+    borderBottomLeftRadius: 300,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  loginText: {
+    fontSize: 45,
+    paddingLeft: 20,
+    color: '#553922',
+    fontFamily: 'Actor-Regular',
   },
 });
-
 export default App;
