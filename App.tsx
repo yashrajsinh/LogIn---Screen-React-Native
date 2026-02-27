@@ -15,8 +15,10 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
+import { useState } from 'react';
 
 function App() {
+  const [userName, setUserName] = useState('');
   return (
     <SafeAreaProvider style={styles.mainBackground}>
       <View style={styles.loginContainer}>
@@ -40,6 +42,7 @@ function App() {
         placeholderTextColor={'#57595B'}
       ></TextInput>
       <TextInput
+        secureTextEntry={true}
         style={styles.inputText}
         placeholder="Password"
         placeholderTextColor={'#57595B'}
@@ -95,7 +98,9 @@ const styles = StyleSheet.create({
   inputText: {
     borderWidth: 1,
     borderColor: '#757575',
+    color: '#25343F',
     borderRadius: 15,
+    fontSize: 20,
     padding: 15,
     height: 50,
     margin: 10,
