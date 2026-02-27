@@ -25,8 +25,8 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-LogIn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LogIn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = LogIn/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LogIn/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D359C2F868224F9096F6665D /* Actor-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Actor-Regular.ttf"; path = "../assets/fonts/Actor-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		D359C2F868224F9096F6665D /* Actor-Regular.ttf */ = {isa = PBXFileReference; name = "Actor-Regular.ttf"; path = "../assets/fonts/Actor-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +60,15 @@
 				5DCACB8F33CDC322A6C60F78 /* libPods-LogIn.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6ED4B40615964CBF86912EBC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D359C2F868224F9096F6665D /* Actor-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -100,15 +109,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		6ED4B40615964CBF86912EBC /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				D359C2F868224F9096F6665D /* Actor-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

@@ -14,6 +14,7 @@ import {
   TextInput,
   Alert,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import { useState } from 'react';
 
@@ -40,6 +41,8 @@ function App() {
         style={styles.inputText}
         placeholder="Email"
         placeholderTextColor={'#57595B'}
+        value={userName}
+        onChangeText={setUserName}
       ></TextInput>
       <TextInput
         secureTextEntry={true}
@@ -53,7 +56,10 @@ function App() {
       >
         Forgot password?
       </Text>
-      <TouchableOpacity style={styles.btnLogin}>
+      <TouchableOpacity
+        style={styles.btnLogin}
+        onPress={() => Alert.alert('Welcome 🙏 ' + userName)}
+      >
         <Text style={styles.txtLogin}>Login</Text>
       </TouchableOpacity>
     </SafeAreaProvider>
@@ -63,6 +69,11 @@ const styles = StyleSheet.create({
   //Main Background
   mainBackground: {
     backgroundColor: '#FEF6EF',
+  },
+  //Background img
+  imgBack: {
+    flex: 1,
+    justifyContent: 'center',
   },
   loginContainer: {
     height: 320,
