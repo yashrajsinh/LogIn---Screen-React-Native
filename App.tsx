@@ -6,7 +6,15 @@
  */
 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  Image,
+  TextInput,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
 
 function App() {
   return (
@@ -25,8 +33,26 @@ function App() {
           </View>
         </SafeAreaView>
       </View>
-
-      <SafeAreaView></SafeAreaView>
+      {/* Textiput email*/}
+      <TextInput
+        style={styles.inputText}
+        placeholder="Email"
+        placeholderTextColor={'#57595B'}
+      ></TextInput>
+      <TextInput
+        style={styles.inputText}
+        placeholder="Password"
+        placeholderTextColor={'#57595B'}
+      ></TextInput>
+      <Text
+        style={styles.txtForgot}
+        onPress={() => Alert.alert('Feature not avalible right now!')}
+      >
+        Forgot password?
+      </Text>
+      <TouchableOpacity style={styles.btnLogin}>
+        <Text style={styles.txtLogin}>Login</Text>
+      </TouchableOpacity>
     </SafeAreaProvider>
   );
 }
@@ -64,6 +90,43 @@ const styles = StyleSheet.create({
     height: 250,
     top: 60,
     right: 40,
+  },
+  //TextInput
+  inputText: {
+    borderWidth: 1,
+    borderColor: '#757575',
+    borderRadius: 15,
+    padding: 15,
+    height: 50,
+    margin: 10,
+    justifyContent: 'center',
+  },
+  //email icon
+  icon: {
+    width: 20,
+    height: 20,
+    marginRight: 8,
+  },
+  //Text forgot password
+  txtForgot: {
+    marginStart: 12,
+    marginTop: 2,
+    fontSize: 15,
+  },
+  //Pressable Log in
+  btnLogin: {
+    alignItems: 'center',
+    backgroundColor: '#FCE2CE',
+    padding: 10,
+    margin: 10,
+    borderRadius: 30,
+  },
+  //Login text
+  txtLogin: {
+    textAlign: 'center',
+    fontSize: 20,
+    color: '#553922',
+    fontWeight: '600',
   },
 });
 export default App;
