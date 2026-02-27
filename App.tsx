@@ -13,11 +13,16 @@ function App() {
     <SafeAreaProvider style={styles.mainBackground}>
       <View style={styles.loginContainer}>
         <SafeAreaView>
-          <Text style={styles.loginText}>Login</Text>
-          <Image
-            style={styles.iconSize}
-            source={require('./assets/images/icon.png')}
-          />
+          {/* NEW WRAPPER VIEW */}
+          <View style={styles.viewChild}>
+            <View style={styles.row}>
+              <Text style={styles.loginText}>Login</Text>
+              <Image
+                style={styles.iconSize}
+                source={require('./assets/images/icon.png')}
+              />
+            </View>
+          </View>
         </SafeAreaView>
       </View>
 
@@ -26,31 +31,39 @@ function App() {
   );
 }
 const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 25,
-    color: '#FFFFFF',
-  },
+  //Main Background
   mainBackground: {
     backgroundColor: '#FEF6EF',
-  },
-  iconSize: {
-    width: 250,
-    height: 250,
-    marginStart: 70,
   },
   loginContainer: {
     height: 350,
     backgroundColor: '#FCE2CE',
     borderBottomRightRadius: 300,
     borderBottomLeftRadius: 300,
-    flexDirection: 'row',
-    alignItems: 'center',
   },
+  viewChild: {
+    position: 'absolute',
+  },
+  row: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+  },
+
   loginText: {
-    fontSize: 45,
-    paddingLeft: 20,
+    fontSize: 55,
+    textAlign: 'center',
+    top: 70,
+    left: 30,
     color: '#553922',
     fontFamily: 'Actor-Regular',
+    position: 'relative',
+  },
+
+  iconSize: {
+    width: 250,
+    height: 250,
+    top: 60,
+    right: 40,
   },
 });
 export default App;
